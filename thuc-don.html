@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thực đơn 3D | Tinh Hoa Ẩm Thực Hà Nội - Nhóm 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Giọt nước Hồ Gươm rơi xuống & mở thanh điều hướng nhanh các trang -->
+  <div id="dropletWrapper" class="droplet-wrapper">
+    <div id="waterDroplet" class="floating-droplet" title="Bấm để mở điều hướng nhanh">
+      <span>Hồ Gươm<br>Menu ▾</span>
+    </div>
+    <nav class="droplet-quick-menu" aria-label="Điều hướng nhanh">
+      <a href="index.html">🏛️ Trang chủ Thăng Long</a>
+      <a href="thuc-don.html">🍜 Thực đơn 3D 6 món</a>
+      <a href="nguyen-lieu.html">⚖️ Bảng nguyên liệu</a>
+      <a href="food-tour.html">🗺️ Lịch trình Food Tour</a>
+      <a href="lien-he.html">🏮 Đặt trải nghiệm</a>
+      <div id="dropletCoord" class="droplet-coord-badge">Tọa độ: Left 28px | Top 105px</div>
+    </nav>
+  </div>
+
+  <!-- Thanh điều hướng chính -->
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo">🍜 Vị Hà Nội</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="">Trang chủ</a></li>
+<li><a href="thuc-don.html" class="active">Thực đơn 3D</a></li>
+<li><a href="nguyen-lieu.html" class="">Nguyên liệu & Dinh dưỡng</a></li>
+<li><a href="food-tour.html" class="">Lịch trình Food Tour</a></li>
+<li><a href="lien-he.html" class="">Đặt trải nghiệm</a></li>
+          <li>
+            <!-- Nút viên thuốc chuyển đổi Sáng (Mặt trời) / Tối (Mặt trăng) -->
+            <button id="themeToggle" class="theme-pill-switch" aria-label="Chuyển đổi giao diện Sáng / Tối">
+              <span id="themeIcon" class="theme-pill-thumb">☀️</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    
+<section class="container" style="padding-top: 44px;">
+  <div class="section-title">
+    <img src="assets/images/dragon-phoenix.svg" alt="Hoa văn trang trí" class="dragon-divider" style="width: 260px;">
+    <h2>Thực Đơn Đặc Sản Hà Nội</h2>
+    <span class="micro-hint">* Lọc theo nhóm món hoặc nhập từ khóa để tìm kiếm nhanh</span>
+  </div>
+
+  <div class="filter-bar">
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="all">Tất cả (6 món)</button>
+      <button class="filter-btn" data-category="mon-nuoc">Món nước</button>
+      <button class="filter-btn" data-category="mon-kho">Món nướng & Bún</button>
+      <button class="filter-btn" data-category="qua-chieu">Quà chiều</button>
+    </div>
+    <input type="text" id="searchInput" class="search-box" placeholder="🔍 Nhập tên món (VD: Phở, Cốm...)">
+  </div>
+
+  <div id="menuGrid" class="food-grid"></div>
+</section>
+
+  </main>
+
+  <!-- Modal xem nhanh nguyên liệu -->
+  <div id="dishModal" class="modal-overlay" onclick="if(event.target === this) closeDishModal()">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeDishModal()">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Chân trang Nhóm 1 -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Tinh Hoa Ẩm Thực Hà Nội</h4>
+          <p>Dự án website tĩnh tôn vinh di sản ẩm thực Thăng Long - Hà Nội kết hợp nghệ thuật thị giác tương tác 3D.</p>
+        </div>
+        <div>
+          <h4>Điều hướng nhanh</h4>
+          <ul style="list-style: none; line-height: 2;">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="thuc-don.html">Thực đơn 6 món</a></li>
+            <li><a href="food-tour.html">Lịch trình Food Tour</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Thực hiện bởi Nhóm 1</h4>
+          <ul style="list-style: none; line-height: 1.9;">
+            <li>• Nguyễn Huy Anh Đức</li>
+            <li>• Phạm Hoàng Bách</li>
+            <li>• Lê Tấn Phát</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Bài tập nhóm Thiết kế & Lập trình Web Căn bản — Nhóm 1.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

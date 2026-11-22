@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặt trải nghiệm | Tinh Hoa Ẩm Thực Hà Nội - Nhóm 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Giọt nước Hồ Gươm rơi xuống & mở thanh điều hướng nhanh các trang -->
+  <div id="dropletWrapper" class="droplet-wrapper">
+    <div id="waterDroplet" class="floating-droplet" title="Bấm để mở điều hướng nhanh">
+      <span>Hồ Gươm<br>Menu ▾</span>
+    </div>
+    <nav class="droplet-quick-menu" aria-label="Điều hướng nhanh">
+      <a href="index.html">🏛️ Trang chủ Thăng Long</a>
+      <a href="thuc-don.html">🍜 Thực đơn 3D 6 món</a>
+      <a href="nguyen-lieu.html">⚖️ Bảng nguyên liệu</a>
+      <a href="food-tour.html">🗺️ Lịch trình Food Tour</a>
+      <a href="lien-he.html">🏮 Đặt trải nghiệm</a>
+      <div id="dropletCoord" class="droplet-coord-badge">Tọa độ: Left 28px | Top 105px</div>
+    </nav>
+  </div>
+
+  <!-- Thanh điều hướng chính -->
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo">🍜 Vị Hà Nội</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="">Trang chủ</a></li>
+<li><a href="thuc-don.html" class="">Thực đơn 3D</a></li>
+<li><a href="nguyen-lieu.html" class="">Nguyên liệu & Dinh dưỡng</a></li>
+<li><a href="food-tour.html" class="">Lịch trình Food Tour</a></li>
+<li><a href="lien-he.html" class="active">Đặt trải nghiệm</a></li>
+          <li>
+            <!-- Nút viên thuốc chuyển đổi Sáng (Mặt trời) / Tối (Mặt trăng) -->
+            <button id="themeToggle" class="theme-pill-switch" aria-label="Chuyển đổi giao diện Sáng / Tối">
+              <span id="themeIcon" class="theme-pill-thumb">☀️</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    
+<section class="booking-hero-section">
+  <div class="container booking-wrapper">
+    <div class="booking-info-panel">
+      <span class="hero-badge" style="background: rgba(240,177,67,0.2); color: #f0b143;">TRẢI NGHIỆM ẨM THỰC KINH KỲ</span>
+      <h2>Đặt Lịch Tư Vấn & Nhận Bản Đồ Quán Ngon Hà Nội</h2>
+      <p>
+        Hãy chia sẻ món ăn Hà Thành khiến bạn thương nhớ nhất. Đội ngũ Nhóm 1 sẽ gửi ngay bộ cẩm nang địa chỉ quán gia truyền chuẩn vị cùng gợi ý khung giờ thưởng thức trọn vẹn nhất.
+      </p>
+      <ul class="perk-list">
+        <li>🏮 Gợi ý danh sách quán ăn chuẩn vị người bản địa Hà Nội</li>
+        <li>🗺️ Bản đồ lộ trình di chuyển tối ưu quanh khu vực Phố Cổ - Hồ Tây</li>
+        <li>🎁 Hoàn toàn miễn phí dành cho những người yêu văn hóa ẩm thực Việt</li>
+      </ul>
+    </div>
+
+    <form id="bookingForm" class="glass-form-box" novalidate>
+      <h3 style="font-family: var(--font-heading); color: var(--primary-color); font-size: 1.5rem; margin-bottom: 4px;">Phiếu Đăng Ký Trải Nghiệm</h3>
+      <span class="micro-hint" style="margin-bottom: 16px;">* Vui lòng điền đầy đủ thông tin có dấu sao</span>
+
+      <div class="form-group">
+        <label for="fullName">Họ và tên của bạn *</label>
+        <input type="text" id="fullName" placeholder="Ví dụ: Nguyễn Văn An">
+        <div id="errName" class="error-msg">Vui lòng nhập họ tên hợp lệ (tối thiểu 2 ký tự).</div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Địa chỉ Email nhận cẩm nang *</label>
+        <input type="email" id="email" placeholder="example@gmail.com">
+        <div id="errEmail" class="error-msg">Vui lòng nhập đúng định dạng Email.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="dishSelect">Món ăn Hà Nội bạn muốn trải nghiệm nhất *</label>
+        <select id="dishSelect">
+          <option value="">-- Chọn một món ăn --</option>
+          <option value="pho">Phở Hà Nội</option>
+          <option value="buncha">Bún Chả</option>
+          <option value="chaca">Chả Cá Lã Vọng</option>
+          <option value="bunthang">Bún Thang</option>
+          <option value="com">Cốm Làng Vòng</option>
+          <option value="banhtom">Bánh Tôm Hồ Tây</option>
+        </select>
+        <div id="errDish" class="error-msg">Vui lòng chọn ít nhất một món ăn.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="note">Ghi chú thêm (khẩu vị, số người đi cùng...)</label>
+        <textarea id="note" rows="3" placeholder="Nhập lời nhắn của bạn..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary" style="width: 100%;">Gửi Đăng Ký Ngay</button>
+      <p id="formSuccess" style="display:none; color: #2e8b38; font-weight: 700; margin-top: 14px; text-align: center;">
+        ✅ Đăng ký thành công! Cảm ơn bạn đã quan tâm tới dự án của Nhóm 1.
+      </p>
+    </form>
+  </div>
+</section>
+
+  </main>
+
+  <!-- Modal xem nhanh nguyên liệu -->
+  <div id="dishModal" class="modal-overlay" onclick="if(event.target === this) closeDishModal()">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeDishModal()">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Chân trang Nhóm 1 -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Tinh Hoa Ẩm Thực Hà Nội</h4>
+          <p>Dự án website tĩnh tôn vinh di sản ẩm thực Thăng Long - Hà Nội kết hợp nghệ thuật thị giác tương tác 3D.</p>
+        </div>
+        <div>
+          <h4>Điều hướng nhanh</h4>
+          <ul style="list-style: none; line-height: 2;">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="thuc-don.html">Thực đơn 6 món</a></li>
+            <li><a href="food-tour.html">Lịch trình Food Tour</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Thực hiện bởi Nhóm 1</h4>
+          <ul style="list-style: none; line-height: 1.9;">
+            <li>• Nguyễn Huy Anh Đức</li>
+            <li>• Phạm Hoàng Bách</li>
+            <li>• Lê Tấn Phát</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Bài tập nhóm Thiết kế & Lập trình Web Căn bản — Nhóm 1.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

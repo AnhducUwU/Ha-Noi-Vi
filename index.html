@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang chủ | Tinh Hoa Ẩm Thực Hà Nội - Nhóm 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Giọt nước Hồ Gươm rơi xuống & mở thanh điều hướng nhanh các trang -->
+  <div id="dropletWrapper" class="droplet-wrapper">
+    <div id="waterDroplet" class="floating-droplet" title="Bấm để mở điều hướng nhanh">
+      <span>Hồ Gươm<br>Menu ▾</span>
+    </div>
+    <nav class="droplet-quick-menu" aria-label="Điều hướng nhanh">
+      <a href="index.html">🏛️ Trang chủ Thăng Long</a>
+      <a href="thuc-don.html">🍜 Thực đơn 3D 6 món</a>
+      <a href="nguyen-lieu.html">⚖️ Bảng nguyên liệu</a>
+      <a href="food-tour.html">🗺️ Lịch trình Food Tour</a>
+      <a href="lien-he.html">🏮 Đặt trải nghiệm</a>
+      <div id="dropletCoord" class="droplet-coord-badge">Tọa độ: Left 28px | Top 105px</div>
+    </nav>
+  </div>
+
+  <!-- Thanh điều hướng chính -->
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo">🍜 Vị Hà Nội</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Trang chủ</a></li>
+<li><a href="thuc-don.html" class="">Thực đơn 3D</a></li>
+<li><a href="nguyen-lieu.html" class="">Nguyên liệu & Dinh dưỡng</a></li>
+<li><a href="food-tour.html" class="">Lịch trình Food Tour</a></li>
+<li><a href="lien-he.html" class="">Đặt trải nghiệm</a></li>
+          <li>
+            <!-- Nút viên thuốc chuyển đổi Sáng (Mặt trời) / Tối (Mặt trăng) -->
+            <button id="themeToggle" class="theme-pill-switch" aria-label="Chuyển đổi giao diện Sáng / Tối">
+              <span id="themeIcon" class="theme-pill-thumb">☀️</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    
+<section class="hero">
+  <!-- Hình vẽ Tháp Rùa Hồ Gươm chìm nghệ thuật -->
+  <img src="assets/images/ho-guom-art.svg" alt="Họa tiết Tháp Rùa Hồ Gươm" class="hero-landmark-bg">
+
+  <div class="container">
+    <img src="assets/images/dragon-phoenix.svg" alt="Hoa văn Rồng Phượng Thăng Long" class="dragon-divider">
+    <span class="hero-badge">DI SẢN VĂN HÓA KINH KỲ</span>
+    <h1>Đánh Thức Vị Giác Với <span>Tinh Hoa Ẩm Thực Hà Nội</span></h1>
+    <p class="intro-indent">
+      Ẩm thực Hà Nội không ồn ào phô trương mà lắng đọng trong từng bát nước dùng trong veo, từng sợi bún rối mềm mại hay hương cốm non gói trong lá sen mùa thu. Mỗi món ăn là một câu chuyện văn hóa ngàn năm Thăng Long được lưu giữ qua từng thế hệ người Tràng An.
+    </p>
+    <a href="thuc-don.html" class="btn-primary">Khám phá trọn bộ 6 món ăn &rarr;</a>
+  </div>
+</section>
+
+<section class="container" style="padding-top: 28px;">
+  <div class="section-title">
+    <img src="assets/images/dragon-phoenix.svg" alt="Hoa văn trang trí" class="dragon-divider" style="width: 260px;">
+    <h2>Món Ngon Tiêu Biểu Hà Thành</h2>
+    <span class="micro-hint">* Mẹo nhỏ: Di chuột qua từng bát/đĩa để xem hiệu ứng nổi khối 3D của nguyên liệu</span>
+  </div>
+  <div id="featuredGrid" class="food-grid"></div>
+</section>
+
+  </main>
+
+  <!-- Modal xem nhanh nguyên liệu -->
+  <div id="dishModal" class="modal-overlay" onclick="if(event.target === this) closeDishModal()">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeDishModal()">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Chân trang Nhóm 1 -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Tinh Hoa Ẩm Thực Hà Nội</h4>
+          <p>Dự án website tĩnh tôn vinh di sản ẩm thực Thăng Long - Hà Nội kết hợp nghệ thuật thị giác tương tác 3D.</p>
+        </div>
+        <div>
+          <h4>Điều hướng nhanh</h4>
+          <ul style="list-style: none; line-height: 2;">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="thuc-don.html">Thực đơn 6 món</a></li>
+            <li><a href="food-tour.html">Lịch trình Food Tour</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Thực hiện bởi Nhóm 1</h4>
+          <ul style="list-style: none; line-height: 1.9;">
+            <li>• Nguyễn Huy Anh Đức</li>
+            <li>• Phạm Hoàng Bách</li>
+            <li>• Lê Tấn Phát</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Bài tập nhóm Thiết kế & Lập trình Web Căn bản — Nhóm 1.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

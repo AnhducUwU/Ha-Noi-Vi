@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguyên liệu & Dinh dưỡng | Tinh Hoa Ẩm Thực Hà Nội - Nhóm 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Giọt nước Hồ Gươm rơi xuống & mở thanh điều hướng nhanh các trang -->
+  <div id="dropletWrapper" class="droplet-wrapper">
+    <div id="waterDroplet" class="floating-droplet" title="Bấm để mở điều hướng nhanh">
+      <span>Hồ Gươm<br>Menu ▾</span>
+    </div>
+    <nav class="droplet-quick-menu" aria-label="Điều hướng nhanh">
+      <a href="index.html">🏛️ Trang chủ Thăng Long</a>
+      <a href="thuc-don.html">🍜 Thực đơn 3D 6 món</a>
+      <a href="nguyen-lieu.html">⚖️ Bảng nguyên liệu</a>
+      <a href="food-tour.html">🗺️ Lịch trình Food Tour</a>
+      <a href="lien-he.html">🏮 Đặt trải nghiệm</a>
+      <div id="dropletCoord" class="droplet-coord-badge">Tọa độ: Left 28px | Top 105px</div>
+    </nav>
+  </div>
+
+  <!-- Thanh điều hướng chính -->
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo">🍜 Vị Hà Nội</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="">Trang chủ</a></li>
+<li><a href="thuc-don.html" class="">Thực đơn 3D</a></li>
+<li><a href="nguyen-lieu.html" class="active">Nguyên liệu & Dinh dưỡng</a></li>
+<li><a href="food-tour.html" class="">Lịch trình Food Tour</a></li>
+<li><a href="lien-he.html" class="">Đặt trải nghiệm</a></li>
+          <li>
+            <!-- Nút viên thuốc chuyển đổi Sáng (Mặt trời) / Tối (Mặt trăng) -->
+            <button id="themeToggle" class="theme-pill-switch" aria-label="Chuyển đổi giao diện Sáng / Tối">
+              <span id="themeIcon" class="theme-pill-thumb">☀️</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    
+<section class="container" style="padding-top: 44px;">
+  <div class="section-title">
+    <img src="assets/images/dragon-phoenix.svg" alt="Hoa văn trang trí" class="dragon-divider" style="width: 260px;">
+    <h2>Bảng Nguyên Liệu & Giá Trị Dinh Dưỡng</h2>
+    <span class="micro-hint">* Phân tích thành phần tinh túy và mức năng lượng trung bình trên mỗi khẩu phần</span>
+  </div>
+
+  <div class="nutrition-highlights">
+    <div class="stat-card">
+      <h4>Món thanh đạm nhất</h4>
+      <div class="stat-value">Cốm Làng Vòng (~280 kcal)</div>
+      <span class="micro-hint">Giàu tinh bột tự nhiên từ lúa nếp non & hương sen</span>
+    </div>
+    <div class="stat-card">
+      <h4>Món cầu kỳ nhất</h4>
+      <div class="stat-value">Bún Thang (20+ nguyên liệu)</div>
+      <span class="micro-hint">Nghệ thuật phối màu ngũ sắc của người Hà Nội xưa</span>
+    </div>
+    <div class="stat-card">
+      <h4>Món giàu năng lượng nhất</h4>
+      <div class="stat-value">Chả Cá Lã Vọng (~600 kcal)</div>
+      <span class="micro-hint">Giàu đạm cá lăng, tinh dầu nghệ và thì là</span>
+    </div>
+  </div>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tên món ăn</th>
+        <th>Nguyên liệu linh hồn</th>
+        <th>Nước chấm / Nước dùng</th>
+        <th>Mức năng lượng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>01</td>
+        <td><strong>Phở Hà Nội</strong></td>
+        <td>Bánh phở mềm, thịt bò tái/gà ta, hành lá, rau thơm</td>
+        <td>Nước dùng xương hầm thanh ngọt, quế hồi</td>
+        <td>
+          <strong>450 kcal</strong>
+          <div class="kcal-bar-bg"><div class="kcal-bar-fill" style="width: 75%;"></div></div>
+        </td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td><strong>Bún Chả</strong></td>
+        <td>Thịt lợn băm viên & ba chỉ nướng than hoa, bún tươi</td>
+        <td>Nước mắm chua ngọt kèm đu đủ, cà rốt</td>
+        <td>
+          <strong>550 kcal</strong>
+          <div class="kcal-bar-bg"><div class="kcal-bar-fill" style="width: 90%;"></div></div>
+        </td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td><strong>Chả Cá Lã Vọng</strong></td>
+        <td>Cá lăng tẩm riềng nghệ mẻ, thì là, hành lá, lạc rang</td>
+        <td>Mắm tôm đánh bông với chanh, ớt, mỡ nóng</td>
+        <td>
+          <strong>600 kcal</strong>
+          <div class="kcal-bar-bg"><div class="kcal-bar-fill" style="width: 100%;"></div></div>
+        </td>
+      </tr>
+      <tr>
+        <td>04</td>
+        <td><strong>Bún Thang</strong></td>
+        <td>Trứng tráng thái chỉ, giò lụa, gà xé phay, nấm hương</td>
+        <td>Nước dùng gà & tôm khô thanh tao</td>
+        <td>
+          <strong>420 kcal</strong>
+          <div class="kcal-bar-bg"><div class="kcal-bar-fill" style="width: 70%;"></div></div>
+        </td>
+      </tr>
+      <tr>
+        <td>05</td>
+        <td><strong>Cốm Làng Vòng</strong></td>
+        <td>Hạt nếp non dẻo thơm gói lá sen tươi</td>
+        <td>Ăn mộc hoặc kèm chuối tiêu chín</td>
+        <td>
+          <strong>280 kcal</strong>
+          <div class="kcal-bar-bg"><div class="kcal-bar-fill" style="width: 46%;"></div></div>
+        </td>
+      </tr>
+      <tr>
+        <td>06</td>
+        <td><strong>Bánh Tôm Hồ Tây</strong></td>
+        <td>Tôm tươi Hồ Tây, bột mì giòn rụm, khoai lang</td>
+        <td>Nước mắm tỏi ớt chua ngọt & rau sống</td>
+        <td>
+          <strong>480 kcal</strong>
+          <div class="kcal-bar-bg"><div class="kcal-bar-fill" style="width: 80%;"></div></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+  </main>
+
+  <!-- Modal xem nhanh nguyên liệu -->
+  <div id="dishModal" class="modal-overlay" onclick="if(event.target === this) closeDishModal()">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeDishModal()">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Chân trang Nhóm 1 -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Tinh Hoa Ẩm Thực Hà Nội</h4>
+          <p>Dự án website tĩnh tôn vinh di sản ẩm thực Thăng Long - Hà Nội kết hợp nghệ thuật thị giác tương tác 3D.</p>
+        </div>
+        <div>
+          <h4>Điều hướng nhanh</h4>
+          <ul style="list-style: none; line-height: 2;">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="thuc-don.html">Thực đơn 6 món</a></li>
+            <li><a href="food-tour.html">Lịch trình Food Tour</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Thực hiện bởi Nhóm 1</h4>
+          <ul style="list-style: none; line-height: 1.9;">
+            <li>• Nguyễn Huy Anh Đức</li>
+            <li>• Phạm Hoàng Bách</li>
+            <li>• Lê Tấn Phát</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Bài tập nhóm Thiết kế & Lập trình Web Căn bản — Nhóm 1.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
