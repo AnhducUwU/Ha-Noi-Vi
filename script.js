@@ -265,27 +265,30 @@ function setupContactForm() {
       document.getElementById("errDish").style.display = "none";
     }
 
-    if (isValid) {
-   // Lấy thêm tên hiển thị của món ăn được chọn
+if (isValid) {
       const submitBtn = form.querySelector('button[type="submit"]');
       if (submitBtn) submitBtn.disabled = true;
+
+      const noteInput = document.getElementById("note"); // Đổi "note" thành id thật của ô ghi chú trong HTML nếu khác
       const selectedOption = dishSelect.options[dishSelect.selectedIndex];
       const dishName = selectedOption ? selectedOption.text : dishSelect.value;
+
       const cleanName = fullName.value.trim().slice(0, 200) || "Không có";
       const cleanEmail = email.value.trim().slice(0, 200) || "Không có";
       const cleanDish = (dishName || "Chưa chọn").slice(0, 200);
+      const cleanNote = noteInput?.value.trim().slice(0, 500) || "Không có ghi chú";
 
-      // Dữ liệu gửi về Discord (dạng thẻ Embed nhìn cho đẹp)
       const payload = {
         username: "Ẩm Thực Hà Nội - Đặt Trải Nghiệm",
         embeds: [
           {
             title: "🍜 CÓ KHÁCH ĐĂNG KÝ TRẢI NGHIỆM MỚI!",
-            color: 15105570, // Màu cam nổi bật
+            color: 15105570,
             fields: [
               { name: "👤 Họ và tên", value: cleanName, inline: true },
               { name: "📧 Email", value: cleanEmail, inline: true },
-              { name: "🥢 Món/Gói đăng ký", value: cleanDish, inline: false }
+              { name: "🥢 Món/Gói đăng ký", value: cleanDish, inline: false },
+              { name: "📝 Ghi chú", value: cleanNote, inline: false }
             ],
             timestamp: new Date().toISOString()
           }
@@ -308,9 +311,8 @@ function setupContactForm() {
       } catch (error) {
         console.error("Lỗi kết nối:", error);
         alert("Không thể kết nối mạng để gửi thông tin.");
-      }
-      finally {
-      if (submitBtn) submitBtn.disabled = false;
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
       }
     }
   });
