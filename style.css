@@ -13,8 +13,8 @@
   --border-color: #e6d8c3;
 
   /* 2. PHÔNG CHỮ & KHOẢNG CÁCH */
-  --font-heading: 'Georgia', 'Times New Roman', serif;
-  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-heading: 'Lora', 'Merriweather', 'Be Vietnam Pro', serif;
+  --font-body: 'Be Vietnam Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --text-indent-p: 28px;          /* Độ thụt đầu dòng của đoạn văn */
   --card-radius: 18px;
   --grid-columns: 3;
