@@ -233,7 +233,9 @@ function setupContactForm() {
   const form = document.getElementById("bookingForm");
   if (!form) return;
 
-  form.addEventListener("submit", (e) => {
+  const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1574039077467062435/g--UkTFbw7Lf1vzcx50a86dS62HOsbB1flivpagTGafNgGqiuv__n-floYgrsER5AdRL";
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     let isValid = true;
 
@@ -264,8 +266,52 @@ function setupContactForm() {
     }
 
     if (isValid) {
-      document.getElementById("formSuccess").style.display = "block";
-      form.reset();
+   // Lấy thêm tên hiển thị của món ăn được chọn
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+      const selectedOption = dishSelect.options[dishSelect.selectedIndex];
+      const dishName = selectedOption ? selectedOption.text : dishSelect.value;
+      const cleanName = fullName.value.trim().slice(0, 200) || "Không có";
+      const cleanEmail = email.value.trim().slice(0, 200) || "Không có";
+      const cleanDish = (dishName || "Chưa chọn").slice(0, 200);
+
+      // Dữ liệu gửi về Discord (dạng thẻ Embed nhìn cho đẹp)
+      const payload = {
+        username: "Ẩm Thực Hà Nội - Đặt Trải Nghiệm",
+        embeds: [
+          {
+            title: "🍜 CÓ KHÁCH ĐĂNG KÝ TRẢI NGHIỆM MỚI!",
+            color: 15105570, // Màu cam nổi bật
+            fields: [
+              { name: "👤 Họ và tên", value: cleanName, inline: true },
+              { name: "📧 Email", value: cleanEmail, inline: true },
+              { name: "🥢 Món/Gói đăng ký", value: cleanDish, inline: false }
+            ],
+            timestamp: new Date().toISOString()
+          }
+        ]
+      };
+
+      try {
+        const res = await fetch(DISCORD_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+          document.getElementById("formSuccess").style.display = "block";
+          form.reset();
+        } else {
+          alert("Lỗi gửi thông báo về Discord! Hãy kiểm tra lại Webhook URL.");
+        }
+      } catch (error) {
+        console.error("Lỗi kết nối:", error);
+        alert("Không thể kết nối mạng để gửi thông tin.");
+      }
+      finally {
+      if (submitBtn) submitBtn.disabled = false;
+      }
     }
   });
 }
